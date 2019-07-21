@@ -1,0 +1,261 @@
+@import '_var.scss';
+
+.App {
+  min-height: 100vh;
+  display: flex;
+}
+
+.App_leftCol {
+  width: 45%;
+  background-color: $lightPink;
+  display: flex;
+  flex-direction: column;
+  // padding-left: 85px;
+  .leftCol_addItemBlock {
+    height: 56px;
+    flex: none;
+    background-color: $white;
+    margin: 48px 30px 0 85px;
+    display: flex;
+    .addItemBlock_input {
+      display: inline-block;
+      border: none;
+      outline: none;
+      margin: 0;
+      padding: 16px;
+      flex: 1;
+      font-size: 16px;
+      color: $pink;
+      font-weight: bold;
+      font-style: italic;
+      &::placeholder {
+        color: $pink;
+      }
+    }
+    .addItemBlock_addBtn {
+      width: 56px;
+      height: 56px;
+      display: inline-block;
+      flex: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 24px;
+      }
+    }
+  }
+
+  .leftCol_currentItemBlock {
+    flex: 1;
+    margin: 0 30px 0 85px;
+    display: flex;
+    align-items: center;
+    & > div {
+      flex: none;
+    }
+    .currentItemBlock_item {
+      height: 48px;
+      display: flex;
+      .item_check {
+        flex: none;
+        width: 48px;
+        img {
+          width: 100%;
+        }
+      }
+      .item_content {
+        flex: 1;
+        margin-left: 16px;
+        h2 {
+          font-size: 24px;
+          font-weight: bold;
+          margin: 0;
+          color: $deepBlue;
+        }
+        & > div {
+          height: 12px;
+          img {
+            height: 100%;
+          }
+
+        }
+
+      }
+
+    }
+    .currentItemBlock_time {
+      color: $pink;
+      // font-size: 176px;
+      font-size: 156px;
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+  .leftCol_itemsListBlock {
+    flex: none;
+    height: 115px + 27px + 9px;
+    margin: 0 30px 48px 85px;
+    .itemListBlock_listItem {
+      height: 40px;
+      border-bottom: 1px solid fade-out($deepBlue, 0.8);
+      display: flex;
+      align-items: center;
+      .listItem_checkbox {
+        width: 24px;
+        margin-right: 4px;
+        flex: none;
+        img {
+          width: 100%;
+        }
+      }
+      .listItem_title {
+        flex: 1;
+        font-size: 16px;
+        font-weight: bold;
+        color: $deepBlue;
+      }
+      .listItem_playBtn {
+        width: 24px;
+        flex: none;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .itemListBlock_moreLink {
+      height: 19px;
+      color: $pink;
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 9px;
+      float: right;
+      text-decoration: none;
+    }
+  }
+}
+
+.App_centerCol {
+  width: 40%;
+  background: linear-gradient(90deg, $lightPink 50%, $deepBlue 50%);
+  display: flex;
+  align-items: center;
+  .centerCol_circle {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    border-radius: 50% / 50%;
+    background-color: $pink;
+    position: relative;
+    &::after{
+      content: "";
+      width: 105%;
+      height: 0;
+      padding-bottom: 105%;
+      border-radius: 50% / 50%;
+      border: 4px solid $pink;
+      display: block;
+      position: absolute;
+      top: -3%;
+      left: -3%;
+    };
+    .circle_actBtnBlock {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 96px + 24px;
+      height: 96px;
+      margin-left: -0.5 * 96px;
+      margin-top: -0.5 * 96px;
+      // background-color: #fff;
+      display: flex;
+      align-items: flex-end;
+      .actBtnBlock_playBtn {
+        cursor: pointer;
+        height: 100%;
+        img {
+          height: 100%;
+        }
+      }
+      .actBtnBlock_stopBtn {
+        cursor: pointer;
+        height: 24px;
+        margin-bottom: 4px;
+        img {
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+.App_rightCol {
+  width: 15%;
+  background-color: $deepBlue;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: column;
+
+  .rightCol_topBlock {
+    margin: 48px 85px 48px 59px;
+    width: 36px;
+    height: 50%;
+    .topBlock_btn {
+      img {
+        width: 100%;
+      }
+    }
+    .topBlock_btn ~ .topBlock_btn {
+      margin-top: 48px;
+    }
+  }
+  .rightCol_bottomBlock {
+    width: 36px;
+    margin: 48px 85px 48px 59px;
+    height: 20%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    h1 {
+      margin: 0;
+      padding: 0;
+      color: $white;
+      font-size: 24px;
+      font-weight: bold;
+      transform: rotate(90deg) translateY(24px);
+      transform-origin: bottom right;
+    }
+
+
+  }
+
+}
+
+
+
+
+
+/*.App-header {
+  background-color: #282c34;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}*/
+
+/*.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+*/
